@@ -12,10 +12,11 @@ var vm = new Vue({
 		username: '',
 		password: '',
 		password2: '',
-		mobile: '', 
+		mobile: '',
 		image_code: '',
 		sms_code: '',
-		allow: false
+		allow: false,
+		error_phone_message: '您输入的手机号格式不正确',
 	},
 	methods: {
 		check_username: function (){
@@ -25,6 +26,24 @@ var vm = new Vue({
 			} else {
 				this.error_name = false;
 			}
+
+			// 检查重名
+            if (this.error_name == false) {
+                axios.get('http://127.0.0.1:8000'+'/users/usernames/' + this.username + '/count/', {
+                        responseType: 'json'
+                    })
+                    .then(response => {
+                        if (response.data.count > 0) {
+                            this.error_name_message = '用户名已存在';
+                            this.error_name = true;
+                        } else {
+                            this.error_name = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error.response.data);
+                    })
+            }
 		},
 		check_pwd: function (){
 			var len = this.password.length;
@@ -32,14 +51,14 @@ var vm = new Vue({
 				this.error_password = true;
 			} else {
 				this.error_password = false;
-			}		
+			}
 		},
 		check_cpwd: function (){
 			if(this.password!=this.password2) {
 				this.error_check_password = true;
 			} else {
 				this.error_check_password = false;
-			}		
+			}
 		},
 		check_phone: function (){
 			var re = /^1[345789]\d{9}$/;
@@ -54,7 +73,7 @@ var vm = new Vue({
 				this.error_image_code = true;
 			} else {
 				this.error_image_code = false;
-			}	
+			}
 		},
 		check_sms_code: function(){
 			if(!this.sms_code){

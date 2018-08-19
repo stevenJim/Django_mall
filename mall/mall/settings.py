@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 让django找到	apps这个包
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-# print(sys.path)
+print(sys.path)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -186,7 +186,7 @@ LOGGING = {
 }
 
 REST_FRAMEWORK = {
-    #	异常处理
+    # 异常处理
     'EXCEPTION_HANDLER': 'utils.exception.exception_handler',
 }
 

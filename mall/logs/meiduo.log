@@ -1,0 +1,8 @@
+WARNING	2018-08-19 19:35:52,482	base	152	Not Found: /users/usernames/hahahhahha/count/
+WARNING	2018-08-19 19:35:52,483	basehttp	124	"DELETE /users/usernames/hahahhahha/count/ HTTP/1.1" 404 2135
+WARNING	2018-08-19 19:36:03,429	base	152	Not Found: /users/usernames/hahahhahha/count/
+WARNING	2018-08-19 19:36:03,430	basehttp	124	"GET /users/usernames/hahahhahha/count/ HTTP/1.1" 404 2132
+INFO	2018-08-19 19:36:56,224	basehttp	124	"GET /users/usernames/hahahhahha/count/ HTTP/1.1" 200 35
+INFO	2018-08-19 19:46:45,976	basehttp	124	"GET /users/usernames/xiaopangzi/count/ HTTP/1.1" 200 35
+WARNING	2018-08-19 19:47:03,451	base	152	Not Found: /users/usernames/小胖子/count/
+WARNING	2018-08-19 19:47:03,453	basehttp	124	"GET /users/usernames/%E5%B0%8F%E8%83%96%E5%AD%90/count/ HTTP/1.1" 404 2263
