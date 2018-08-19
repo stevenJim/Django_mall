@@ -183,4 +183,13 @@ LOGGING = {
             'propagate': True,
         },
     }
-        }
+}
+
+REST_FRAMEWORK = {
+    #	异常处理
+    'EXCEPTION_HANDLER': 'utils.exception.exception_handler',
+}
+
+# 配置指定Django的为我们重写的User类
+
+AUTH_USER_MODEL = 'users.User'
